@@ -1,0 +1,11 @@
+<div *ngIf="showLayout$ | async">
+  <app-navbar></app-navbar>
+  <main class="main-content"> <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="!(showLayout$ | async)">
+  <router-outlet></router-outlet>
+</div>

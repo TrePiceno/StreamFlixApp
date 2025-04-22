@@ -1,0 +1,40 @@
+// src/app/pages/favorite-list/favorite-list.component.scss
+
+:host {
+    display: block;
+    padding: 20px;
+    max-width: 900px; // Mismo ancho que la lista principal
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+// Contenedor para la lista de items favoritos (usamos la misma clase de grilla)
+.favorite-list-container {
+    margin-top: 20px;
+}
+
+// Estilos para mensajes de carga/error
+.error-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #dc3545; // Rojo
+}
+
+// Estilo para el mensaje de lista vacía
+.empty-list-message {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+// El layout de grilla es la clase .media-grid que ya está en media-list.component.scss
+// Los estilos de los items individuales están en media-item.component.scss

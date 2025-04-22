@@ -1,0 +1,30 @@
+<h2>Catálogo de Películas y Series</h2>
+
+<div *ngIf="isLoading$ | async">
+    <p>Cargando catálogo...</p>
+</div>
+
+<div *ngIf="errorMessage$ | async as error" class="error-message">
+    <p>{{ error }}</p>
+</div>
+
+<div class="filter-section">
+    <app-media-filter (filterCriteria)="onFilterCriteriaChange($event)"></app-media-filter>
+</div>
+
+<hr>
+
+<div *ngIf="!(errorMessage$ | async) && (filteredMedia$ | async) as filteredMedia" class="media-list-container">
+
+    <div *ngIf="filteredMedia.length === 0">
+        <p>No se encontraron películas o series que coincidan con los criterios de filtro.</p>
+    </div>
+
+    <div class="media-grid">
+        <div *ngFor="let item of filteredMedia">
+            <!-- En esta plantilla no es necesario agregar el input [showRemoveButton]="false", porque esta declarado con ese valor en el .ts y cuando cambia su estado a true se renderizam los items -->
+            <app-media-item [item]="item"></app-media-item>
+        </div>
+    </div>
+
+</div>

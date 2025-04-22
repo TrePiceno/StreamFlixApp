@@ -1,0 +1,32 @@
+<div class="login-container">
+    <img src="assets/images/logo.png" alt="Logo del Catálogo" class="app-logo">
+    <h2>Iniciar Sesión</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" formControlName="username" required placeholder="admin">
+            <!-- *ngIf: directiva que establece una condición para renderizar o no el elemento para mostrar la validación del usuario -->
+            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+                <small class="error-message" *ngIf="loginForm.get('username')?.errors?.['required']">Usuario es
+                    requerido.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" formControlName="password" required placeholder="pass123">
+            <div
+                *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                <small class="error-message" *ngIf="loginForm.get('password')?.errors?.['required']">Contraseña es
+                    requerida.</small>
+            </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message general-error">
+            <p>{{ errorMessage }}</p>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="filter-container">
+    <h3>Filtrar</h3>
+
+    <div [formGroup]="filterForm">
+        <div class="filter-group">
+            <label for="categoria">Tipo:</label> 
+            <select id="categoria" formControlName="categoria">
+                <option value="">Todos</option>
+                <option *ngFor="let cat of categories" [value]="cat">{{ cat | titlecase }}</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="genero">Género:</label>
+            <select id="genero" formControlName="genero">
+                <option value="">Todos</option>
+                <option *ngFor="let g of genres" [value]="g">{{ g }}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <button (click)="resetFilters()">Resetear</button>
+</div>

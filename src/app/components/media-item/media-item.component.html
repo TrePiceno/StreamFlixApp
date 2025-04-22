@@ -1,0 +1,17 @@
+<div class="media-item-container" (click)="goToDetail()" [ngClass]="{ 'is-favorite': isFavorite$ | async }"> 
+    <img [src]="item.imagen" alt="{{ item.titulo }}">
+    <div class="media-info">
+        <div class="media-title">{{ item.titulo }} ({{ item.anio }})</div>
+        <div class="media-category">{{ item.categoria | titlecase }}</div>
+        <div class="media-genre">{{ item.genero }}</div>
+    </div>
+
+    <div class="media-actions">
+        <button *ngIf="!showRemoveButton" (click)="toggleFavorite(); $event.stopPropagation()"
+            [ngClass]="{ 'is-favorite-button': isFavorite$ | async }">
+            {{ (isFavorite$ | async) ? '❤️' : '🤍' }} </button>
+
+        <button *ngIf="showRemoveButton" (click)="removeFromFavorites(); $event.stopPropagation()"
+            class="remove-button"> ❌ </button>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<button [routerLink]="['/media']" class="back-button">Volver al Catálogo</button>
+<h2>Detalles</h2>
+
+<div *ngIf="isLoading">
+    <p>Cargando detalles...</p>
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+</div>
+
+<div *ngIf="!errorMessage && (mediaItem$ | async) as item" class="detail-container">
+
+    <div *ngIf="!item">
+        <p>Película/Serie no encontrada.</p>
+    </div>
+
+    <div *ngIf="item" class="media-detail-content">
+        <img [src]="item.imagenDetalle" alt="{{ item.titulo }}" class="detail-image">
+        <div class="detail-info">
+            <h3>{{ item.titulo }} ({{ item.anio }})</h3>
+            <p class="detail-category">{{ item.categoria | titlecase }}</p>
+            <p class="detail-genre">Género: {{ item.genero }}</p>
+            <p class="detail-director">Director: {{ item.director }}</p>
+            <p class="detail-sipnosis">{{ item.sipnosis }}</p>
+            <!-- Marca o desmarca el item como favorito -->
+            <button (click)="toggleFavorite()" [ngClass]="{ 'is-favorite-button': isFavorite$ | async }"> {{ (isFavorite$ | async) ? '❤️ Marcar como No Favorito' : '🤍 Marcar como Favorito' }} </button>
+        </div>
+    </div>
+
+</div>

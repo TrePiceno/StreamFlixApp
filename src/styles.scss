@@ -1,0 +1,44 @@
+body {
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f4f4f4; 
+}
+
+// Contenedor principal del contenido de la página
+.main-content {
+  padding: 20px; 
+  min-height: calc(100vh - 17.5rem); // Asegura que el footer esté abajo (si no son fijos)
+}
+
+// Estilos para un contenedor centrado (usado en navbar y footer)
+.container {
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// --- ESTILOS DE GRILLA REUTILIZABLE ---
+.media-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); // 4 columnas aprox, que se ajustan
+  gap: 20px;
+  margin-top: 20px;
+}
+
+// Estilos de error globales (si quieres una clase genérica)
+// .error-message {
+//     color: #dc3545;
+//     font-weight: bold;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+// }
+
+// Estilos para el modal de Angular Material
+.cdk-overlay-container { 
+  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50% ;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}

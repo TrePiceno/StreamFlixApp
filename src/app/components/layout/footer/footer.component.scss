@@ -1,0 +1,14 @@
+// src/app/components/layout/footer/footer.component.scss
+
+.footer {
+    background-color: #333; // Color de fondo oscuro
+    color: white; // Texto blanco
+    padding: 20px 0; // Padding arriba y abajo
+    text-align: center; // Centra el texto
+    margin-top: 40px; // Espacio arriba del footer
+
+    p {
+        margin: 0; // Remueve margen por defecto del párrafo
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,96 @@
+// src/app/pages/media-detail/media-detail.component.scss
+
+:host {
+    display: block;
+    padding: 20px;
+    max-width: 800px; // Ancho para el detalle
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    // Estilos heredados del botón general en styles.scss o media-item.component.scss
+    // Asegúrate de que se vea bien
+}
+
+h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+// Contenedor para la imagen grande y la información
+.detail-container {
+    display: flex;
+    flex-direction: column; // Apila la imagen y la info verticalmente
+    gap: 20px; // Espacio entre la imagen y la info
+    align-items: center; // Centra la imagen/bloque de info horizontalmente
+}
+
+.media-detail-content {
+    width: 100%; // Asegura que el contenido ocupe el ancho disponible en el contenedor flex
+}
+
+.detail-image {
+    display: block; // Elimina espacio extra debajo de la imagen
+    width: 100%; // La imagen ocupa todo el ancho del contenedor flex-column
+    max-height: 500px; // Altura máxima para la imagen grande (ajustar si es necesario)
+    object-fit: cover; // Asegura que la imagen cubra el área sin distorsionarse
+    border-radius: 8px; // Bordes redondeados
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra para la imagen
+}
+
+.detail-info {
+    width: 100%; // Asegura que la info ocupe el ancho completo debajo de la imagen
+    padding-top: 20px; // Espacio arriba de la info (si no usas gap en .detail-container)
+    text-align: left; // Alinea el texto de la info a la izquierda
+}
+
+.detail-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.detail-category,
+.detail-genre,
+.detail-director {
+    font-size: 0.95em;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.detail-sipnosis {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6; // Mejor legibilidad
+}
+
+// Estilo para el botón de favorito en la página de detalle
+// Usa los mismos estilos base que en media-item, pero puede necesitar ajustes
+.detail-info button {
+    // Hereda estilos base de botón, pero podemos añadir más aquí
+    display: inline-block; // Ocupa solo el espacio necesario
+    margin-top: 10px;
+}
+
+// Reutiliza la clase is-favorite-button si quieres el mismo estilo de color para el corazón
+button.is-favorite-button {
+    color: #ffc107; // Amarillo para el corazón en el botón
+    // Puedes añadir más estilos si el botón es diferente (ej: fondo, borde)
+    background-color: transparent; // Ejemplo si solo quieres el texto/icono sin fondo
+    border: 1px solid #ffc107;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: #333; // Color del texto "Marcar como..."
+}
+
+button.is-favorite-button:hover {
+    background-color: #ffc107;
+    color: white; // Texto blanco al hover
+}

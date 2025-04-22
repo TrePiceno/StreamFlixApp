@@ -1,0 +1,402 @@
+{
+    "peliculas": [
+        {
+            "id": "p1",
+            "titulo": "Oppenheimer",
+            "imagen": "https://image.tmdb.org/t/p/w500/5t05uhX5ULn8Um2f1ZuznVvIffU.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg",
+            "sipnosis": "La historia del científico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica.",
+            "anio": 2023,
+            "director": "Christopher Nolan",
+            "genero": "Drama histórico",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p2",
+            "titulo": "Barbie",
+            "imagen": "https://image.tmdb.org/t/p/w500/3aij5sA5AhK2flrjsfrVQs93CUx.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/keZwCyT8zbeh5hV9Po6AXRSF8X0.jpg",
+            "sipnosis": "Barbie vive en Barbieland y comienza a cuestionar su mundo y su existencia.",
+            "anio": 2023,
+            "director": "Greta Gerwig",
+            "genero": "Comedia",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p3",
+            "titulo": "Killers of the Flower Moon",
+            "imagen": "https://image.tmdb.org/t/p/w500/64CvprgI5DFGtr6tOgsOwkoC36t.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/fnxQUdLAjmSRCdudbYClkSnrxVf.jpg",
+            "sipnosis": "La historia real de los asesinatos de miembros de la nación Osage en Oklahoma.",
+            "anio": 2023,
+            "director": "Martin Scorsese",
+            "genero": "Drama criminal",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p4",
+            "titulo": "Napoleón",
+            "imagen": "https://image.tmdb.org/t/p/w500/rEpTqGu8JVUULPMsGrhMBDOgznu.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/8Lcn8WMzLNC14rwURgtAOV11JGd.jpg",
+            "sipnosis": "La vida y carrera militar de Napoleón Bonaparte.",
+            "anio": 2023,
+            "director": "Ridley Scott",
+            "genero": "Drama histórico",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p5",
+            "titulo": "The Marvels",
+            "imagen": "https://image.tmdb.org/t/p/w500/rp3cjGabBAVpZtKyY4jiwikzj3H.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/wsGey4fJQKcXmhWidGNFunhunrA.jpg",
+            "sipnosis": "Carol Danvers, Kamala Khan y Monica Rambeau unen fuerzas para salvar el universo.",
+            "anio": 2023,
+            "director": "Nia DaCosta",
+            "genero": "Acción",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p6",
+            "titulo": "Dune: Parte 2",
+            "imagen": "https://image.tmdb.org/t/p/w500/mTibWSlwmYxd5NiD3WHPozWhhiX.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/94sYD4wigZFBo8ovcLyMJm3k4VB.jpg",
+            "sipnosis": "Paul Atreides se une a los Fremen en una guerra de venganza contra los conspiradores.",
+            "anio": 2024,
+            "director": "Denis Villeneuve",
+            "genero": "Ciencia ficción",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p7",
+            "titulo": "Poor Things",
+            "imagen": "https://image.tmdb.org/t/p/w500/jG4o67eZKlvuL5R6WTysRkPwE75.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/aV7D9IMQZVkD10eqbkpHWreVjmv.jpg",
+            "sipnosis": "Una joven mujer revive y emprende un viaje de autodescubrimiento.",
+            "anio": 2023,
+            "director": "Yorgos Lanthimos",
+            "genero": "Drama",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p8",
+            "titulo": "The Zone of Interest",
+            "imagen": "https://image.tmdb.org/t/p/w500/aIFQc0iFTFBiVEQy9dHfcnmVZKb.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/nPKs90SIbbXLpHHWLOwwN61lvGO.jpg",
+            "sipnosis": "La historia de un comandante nazi y su familia que viven junto a Auschwitz.",
+            "anio": 2023,
+            "director": "Jonathan Glazer",
+            "genero": "Drama histórico",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p9",
+            "titulo": "Anatomy of a Fall",
+            "imagen": "https://image.tmdb.org/t/p/w500/1ho0d4LNZw3Y0voeKmSvPSgJOJ2.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/hDhUpy5XUgx810VWusV4alX9DFF.jpg",
+            "sipnosis": "Una escritora es sospechosa del asesinato de su marido.",
+            "anio": 2023,
+            "director": "Justine Triet",
+            "genero": "Thriller",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p10",
+            "titulo": "The Holdovers",
+            "imagen": "https://image.tmdb.org/t/p/w500/VHSzNBTwxV8vh7wylo7O9CLdac.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/gcqscT68BOeeDQaj2H5mrBeADR7.jpg",
+            "sipnosis": "Un profesor de escuela preparatoria debe cuidar a un estudiante durante las vacaciones.",
+            "anio": 2023,
+            "director": "Alexander Payne",
+            "genero": "Comedia dramática",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p11",
+            "titulo": "John Wick 4",
+            "imagen": "https://image.tmdb.org/t/p/w500/jPJfq3s7UybktndveSbhwsReYqH.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/8tX3lxhbACxiX4fn5TkC9AhhW65.jpg",
+            "sipnosis": "John Wick lucha contra la Alta Mesa para ganar su libertad.",
+            "anio": 2023,
+            "director": "Chad Stahelski",
+            "genero": "Acción",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p12",
+            "titulo": "Mission: Impossible - Dead Reckoning",
+            "imagen": "https://image.tmdb.org/t/p/w500/ziqqb5plpSrcHywK53FD06O81LT.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/mRdNsdTJsn5FGjnMs8FyyiQKCaV.jpg",
+            "sipnosis": "Ethan Hunt y su equipo deben detener una IA peligrosa.",
+            "anio": 2023,
+            "director": "Christopher McQuarrie",
+            "genero": "Acción",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p13",
+            "titulo": "No Hard Feelings",
+            "imagen": "https://image.tmdb.org/t/p/w500/8Ox0C2kaH7yJlaBLKgq2PbDGLpJ.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/gDRbkMQus09pK0resW7bNsM38Ax.jpg",
+            "sipnosis": "Una mujer desempleada acepta salir con el hijo introvertido de una pareja rica.",
+            "anio": 2023,
+            "director": "Gene Stupnitsky",
+            "genero": "Comedia",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p14",
+            "titulo": "Bottoms",
+            "imagen": "https://image.tmdb.org/t/p/w500/jeyTQrNEpyE1LZIgVlswYh3sc34.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/2sxiysM6O0FAxeR2CEIeKSv9IkA.jpg",
+            "sipnosis": "Dos chicas crean un club de lucha para acercarse a sus crush.",
+            "anio": 2023,
+            "director": "Emma Seligman",
+            "genero": "Comedia",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p15",
+            "titulo": "Leave the World Behind",
+            "imagen": "https://image.tmdb.org/t/p/w500/jBUyaueouZCf25dbpGcutRJLiE6.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/z2JjbcAyY9XSWYQVCNKLshc6bt9.jpg",
+            "sipnosis": "Una familia se enfrenta a un misterioso apocalipsis.",
+            "anio": 2023,
+            "director": "Sam Esmail",
+            "genero": "Thriller",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p16",
+            "titulo": "Saltburn",
+            "imagen": "https://image.tmdb.org/t/p/w500/nDR7AmsS5WqWyo9dQTggT6JsP6a.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/bAtFhmRHp0f6aHqj1UGTZoPcmQo.jpg",
+            "sipnosis": "Un estudiante de Oxford se obsesiona con su amigo rico.",
+            "anio": 2023,
+            "director": "Emerald Fennell",
+            "genero": "Thriller",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p17",
+            "titulo": "The Creator",
+            "imagen": "https://image.tmdb.org/t/p/w500/m8uLnH83bKkzpM39sBhHxs4ZmVp.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/A0GuykAjb1vlyQSVTyS8nAwaIGM.jpg",
+            "sipnosis": "Un ex-agente debe proteger a una IA con forma de niña.",
+            "anio": 2023,
+            "director": "Gareth Edwards",
+            "genero": "Ciencia ficción",
+            "categoria": "pelicula"
+        },
+        {
+            "id": "p18",
+            "titulo": "Rebel Moon",
+            "imagen": "https://image.tmdb.org/t/p/w500/veWd6l7RtzODYy53qvArJzdqc7y.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/eoJ7eD3yWH1GltI1FvvZfzY6Ok2.jpg",
+            "sipnosis": "Una guerrera reúne un ejército para luchar contra un tirano.",
+            "anio": 2023,
+            "director": "Zack Snyder",
+            "genero": "Ciencia ficción",
+            "categoria": "pelicula"
+        }
+    ],
+    "series": [
+        {
+            "id": "s1",
+            "titulo": "The Last of Us",
+            "imagen": "https://image.tmdb.org/t/p/w500/9kNOjdEoe8dWlu6y9nuR4rmFQo7.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/fAuXblS0qUiQ2SWJzpvFMH1su6i.jpg",
+            "sipnosis": "Un hombre y una niña atraviesan un mundo postapocalíptico en busca de supervivencia.",
+            "anio": 2023,
+            "director": "Craig Mazin",
+            "genero": "Drama postapocalíptico",
+            "categoria": "serie"
+        },
+        {
+            "id": "s2",
+            "titulo": "House of the Dragon",
+            "imagen": "https://image.tmdb.org/t/p/w500/ixOE4qfspKZaaGZUnPCQDANznTz.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/tPd2La6ih0h6EKlXmZSNAu12ozn.jpg",
+            "sipnosis": "La historia de la Casa Targaryen 200 años antes de Game of Thrones.",
+            "anio": 2023,
+            "director": "Ryan Condal",
+            "genero": "Drama fantástico",
+            "categoria": "serie"
+        },
+        {
+            "id": "s3",
+            "titulo": "The Bear",
+            "imagen": "https://image.tmdb.org/t/p/w500/1lL0DvSZ0pEglXpkw7WURSpQZ8k.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/aZz0AOpYcDyYwfET9k6j3QQXPuS.jpg",
+            "sipnosis": "Un chef regresa a Chicago para manejar el restaurante de su familia.",
+            "anio": 2023,
+            "director": "Christopher Storer",
+            "genero": "Drama",
+            "categoria": "serie"
+        },
+        {
+            "id": "s4",
+            "titulo": "Succession",
+            "imagen": "https://image.tmdb.org/t/p/w500/z0XiwdrCQ9yVIr4O0pxzaAYRxdW.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/pvxlTSiM7VsbxdSYLrnKrN1OIUZ.jpg",
+            "sipnosis": "Una familia rica lucha por el control de su imperio mediático.",
+            "anio": 2023,
+            "director": "Jesse Armstrong",
+            "genero": "Drama",
+            "categoria": "serie"
+        },
+        {
+            "id": "s5",
+            "titulo": "Wednesday",
+            "imagen": "https://image.tmdb.org/t/p/w500/5Jj5XwBPCQ9SsZ4vUtQ9QnONxBG.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/phdmzfw3cN7DucxZB3piGlOjdtJ.jpg",
+            "sipnosis": "Wednesday Addams investiga una serie de asesinatos en su nueva escuela.",
+            "anio": 2023,
+            "director": "Tim Burton",
+            "genero": "Comedia negra",
+            "categoria": "serie"
+        },
+        {
+            "id": "s6",
+            "titulo": "The White Lotus",
+            "imagen": "https://image.tmdb.org/t/p/w500/zD00K98yfTxZE1yoK1tM8bAnr2d.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/in4sGDwXnRiruOUEx2p1EcsDNSb.jpg",
+            "sipnosis": "Una serie de misterios en un lujoso resort.",
+            "anio": 2023,
+            "director": "Mike White",
+            "genero": "Drama",
+            "categoria": "serie"
+        },
+        {
+            "id": "s7",
+            "titulo": "Stranger Things",
+            "imagen": "https://image.tmdb.org/t/p/w500/63pSXrvtXhGoHAZ68peN7Le7BoH.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/p1Y6hY9G95OYf8Z67Obh4nZ9GHZ.jpg",
+            "sipnosis": "Un grupo de niños descubre fenómenos sobrenaturales en su pequeño pueblo.",
+            "anio": 2023,
+            "director": "Matt Duffer",
+            "genero": "Ciencia ficción",
+            "categoria": "serie"
+        },
+        {
+            "id": "s8",
+            "titulo": "The Mandalorian",
+            "imagen": "https://image.tmdb.org/t/p/w500/rTChPZw7Jyf4c20OZpN99QCRwkz.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/meybgRNBWAX6u7obnWbidMeBzMe.jpg",
+            "sipnosis": "Un cazarrecompensas solitario protege a un niño misterioso en la galaxia.",
+            "anio": 2023,
+            "director": "Jon Favreau",
+            "genero": "Ciencia ficción",
+            "categoria": "serie"
+        },
+        {
+            "id": "s9",
+            "titulo": "Better Call Saul",
+            "imagen": "https://image.tmdb.org/t/p/w500/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/sJwZkQZLXYuDBQxuKbyvAFgVfn5.jpg",
+            "sipnosis": "La historia de Jimmy McGill antes de convertirse en Saul Goodman.",
+            "anio": 2023,
+            "director": "Vince Gilligan",
+            "genero": "Drama",
+            "categoria": "serie"
+        },
+        {
+            "id": "s10",
+            "titulo": "The Crown",
+            "imagen": "https://image.tmdb.org/t/p/w500/tjUEdX1Pzn1VqNlpUduEnnhhRH4.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/63u7DCLSWo8TNBZUhu7fEXj6kX1.jpg",
+            "sipnosis": "La vida de la reina Isabel II y la familia real británica.",
+            "anio": 2023,
+            "director": "Peter Morgan",
+            "genero": "Drama histórico",
+            "categoria": "serie"
+        },
+        {
+            "id": "s11",
+            "titulo": "Reacher",
+            "imagen": "https://image.tmdb.org/t/p/w500/2JdEwRMrycnOY9waAySOOucIl6K.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/dSL5u2TTkGR0etZf8crINHD2QMR.jpg",
+            "sipnosis": "Un ex-policía militar resuelve crímenes en pequeños pueblos.",
+            "anio": 2023,
+            "director": "Nick Santora",
+            "genero": "Acción",
+            "categoria": "serie"
+        },
+        {
+            "id": "s12",
+            "titulo": "The Night Agent",
+            "imagen": "https://image.tmdb.org/t/p/w500/gCGT2bK4xC9yVdtFdzC7jvEXLJF.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/hg9NIdKRDfwoSWpN10yhih0dziA.jpg",
+            "sipnosis": "Un agente del FBI descubre una conspiración en la Casa Blanca.",
+            "anio": 2023,
+            "director": "Seth Gordon",
+            "genero": "Acción",
+            "categoria": "serie"
+        },
+        {
+            "id": "s13",
+            "titulo": "Ted",
+            "imagen": "https://image.tmdb.org/t/p/w500/2ZetTSYM8ATcrxh4Otge99GJRTz.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/iUglhlBMUgOE9v1ySTlE8xtwjLw.jpg",
+            "sipnosis": "Un osito de peluche malhablado vive con su mejor amigo humano.",
+            "anio": 2024,
+            "director": "Seth MacFarlane",
+            "genero": "Comedia",
+            "categoria": "serie"
+        },
+        {
+            "id": "s14",
+            "titulo": "Shrinking",
+            "imagen": "https://image.tmdb.org/t/p/w500/6U4uXtGlgtXroqQvh2wtTBFktPo.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/tHup0SxItYiitbbgrGqqch2c8J1.jpg",
+            "sipnosis": "Un terapeuta en duelo comienza a dar consejos poco convencionales.",
+            "anio": 2023,
+            "director": "Bill Lawrence",
+            "genero": "Comedia",
+            "categoria": "serie"
+        },
+        {
+            "id": "s15",
+            "titulo": "True Detective: Night Country",
+            "imagen": "https://image.tmdb.org/t/p/w500/cuV2O5ZyDLHSOWzg3nLVljp1ubw.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/rqJELNwYmSzwWVa9bLKrFEzyCvI.jpg",
+            "sipnosis": "Dos detectives investigan la desaparición de ocho hombres en Alaska.",
+            "anio": 2024,
+            "director": "Issa López",
+            "genero": "Thriller",
+            "categoria": "serie"
+        },
+        {
+            "id": "s16",
+            "titulo": "Fool Me Once",
+            "imagen": "https://image.tmdb.org/t/p/w500/5z6xycMXbJCVAIDT5Q4tkzg6cz6.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/vQKeLPP5E4rxGR4u4WJ8g6Eh3in.jpg",
+            "sipnosis": "Una mujer descubre que su marido muerto podría estar vivo.",
+            "anio": 2024,
+            "director": "David Moore",
+            "genero": "Thriller",
+            "categoria": "serie"
+        },
+        {
+            "id": "s17",
+            "titulo": "Silo",
+            "imagen": "https://image.tmdb.org/t/p/w500/f75XqK05rvDqvuD7dXC34OeJcr9.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/cAYMSOqsKmi9vdzWh6yv7FCVHzQ.jpg",
+            "sipnosis": "La humanidad vive en un silo subterráneo gigante.",
+            "anio": 2023,
+            "director": "Morten Tyldum",
+            "genero": "Ciencia ficción",
+            "categoria": "serie"
+        },
+        {
+            "id": "s18",
+            "titulo": "Scavengers Reign",
+            "imagen": "https://image.tmdb.org/t/p/w500/soqfb1vpjhx2ThpkdnnS58QiME2.jpg",
+            "imagenDetalle": "https://image.tmdb.org/t/p/w500/6EKWQuktkOqQFXOzCaokd5ipp33.jpg",
+            "sipnosis": "Sobrevivientes de una nave espacial naufragan en un planeta alienígena.",
+            "anio": 2023,
+            "director": "Charles Huettner",
+            "genero": "Ciencia ficción",
+            "categoria": "serie"
+        }
+    ]
+}

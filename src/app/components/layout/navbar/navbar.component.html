@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <img src="assets/images/logo.png" alt="Logo del Catálogo" class="app-logo-small"> <span>StreamFlix</span>
+        </div>
+
+        <ul class="navbar-links" *ngIf="isLoggedIn$ | async">
+            <li><a routerLink="/media" routerLinkActive="active">Catálogo</a></li>
+            <li><a routerLink="/favorites" routerLinkActive="active">Favoritos</a></li>
+        </ul>
+
+        <button class="logout-button" *ngIf="isLoggedIn$ | async" (click)="logout()"> Logout
+        </button>
+    </div>
+</nav>
