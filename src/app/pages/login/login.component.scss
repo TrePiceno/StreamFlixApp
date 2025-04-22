@@ -1,11 +1,11 @@
 :host {
-    display: flex; // Usa flexbox para centrar el contenido en la página
-    justify-content: center; // Centra horizontalmente
-    align-items: center; // Centra verticalmente
-    min-height: 100vh; // Asegura que ocupe al menos el alto de la ventana
-    background-color: #f4f4f4; // Color de fondo (puede ser diferente al body global si quieres)
-    padding: 20px; // Padding general
-    box-sizing: border-box; // Incluye padding en el tamaño total
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    background-color: #5fb9ee;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .login-container {
@@ -14,14 +14,14 @@
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; // Ancho máximo para el formulario
-    text-align: center; // Centra texto e imagen
+    max-width: 400px;
+    text-align: center;
 }
 
 .app-logo {
-    max-width: 100px; // Tamaño máximo del logo
+    max-width: 100px;
     height: auto;
-    margin-bottom: 20px; // Espacio debajo del logo
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -32,16 +32,16 @@ h2 {
 
 .login-form {
     display: flex;
-    flex-direction: column; // Apila elementos verticalmente
+    flex-direction: column;
 }
 
 .form-group {
-    margin-bottom: 15px; // Espacio entre grupos de formulario
-    text-align: left; // Alinea etiquetas e inputs a la izquierda
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 label {
-    display: block; // Hace que la etiqueta ocupe su propia línea
+    display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: #555;
@@ -50,16 +50,16 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: 100%; // Ocupa todo el ancho disponible
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; // Incluye padding y borde en el ancho
+    box-sizing: border-box;
     font-size: 1em;
 }
 
 button[type="submit"] {
-    background-color: #007bff; // Color azul primario
+    background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -67,29 +67,27 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin-top: 10px; // Espacio arriba del botón
+    margin-top: 10px;
 
     &:hover:not(:disabled) {
-        // Efecto hover solo si NO está deshabilitado
         background-color: #0056b3;
     }
 
     &:disabled {
-        // Estilo cuando está deshabilitado
         background-color: #cccccc;
         cursor: not-allowed;
     }
+
 }
 
 .error-message {
-    color: #dc3545; // Rojo para errores
+    color: #dc3545;
     font-size: 0.8em;
-    margin-top: 4px; // Espacio arriba del mensaje de error
-    display: block; // Asegura que ocupe su propia línea
+    margin-top: 4px;
+    display: block;
 }
 
 .general-error {
-    // Estilo para el mensaje de error general de login
     text-align: center;
     margin-bottom: 15px;
     font-size: 1em;

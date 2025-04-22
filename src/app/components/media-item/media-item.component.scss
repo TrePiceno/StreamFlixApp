@@ -1,42 +1,44 @@
 .media-item-container {
     display: flex;
-    flex-direction: column; // Apila imagen e info verticalmente
+    flex-direction: column;
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     background-color: #fff;
-    position: relative; // Necesario para posicionar elementos internos (como el botón de favorito)
-    min-height: 280px; // Altura mínima para que se vean mejor en la grilla
+    position: relative;
+    height: 430px;
 
     &:hover {
-        transform: translateY(-5px); // Efecto de elevar más
+        transform: translateY(-5px);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
     
-    // Estilo para el contenedor cuando es favorito
+
     &.is-favorite {
-        border-color: #ffc107;
-        box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+        border-color: #5fb9ee;
+        box-shadow: 0 0 10px rgba(7, 114, 255, 0.6);
     }
 }
 
 
 img {
     display: block;
-    width: 100%; // Imagen ocupa todo el ancho del contenedor
-    height: 180px; // Altura fija para la miniatura en la lista
-    object-fit: cover; // Asegura que la imagen cubra sin distorsionarse
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .media-info {
-    flex-grow: 1; // Ocupa el espacio restante verticalmente
+    flex-grow: 1;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // Distribuye el espacio entre elementos de info
-    text-align: left; // Alinea texto a la izquierda
+    justify-content: space-between;
+    text-align: left;
+    position: absolute;
+    bottom: 0px;
 }
 
 .media-title {
@@ -54,38 +56,32 @@ img {
 }
 
 .media-actions {
-    position: absolute; // Posiciona el div de acciones de forma absoluta
-    top: 10px; // Desde arriba
-    right: 10px; // Desde la derecha
-    z-index: 10; // Asegura que esté por encima de la imagen/info
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 .media-actions button {
-    background: rgba(255, 255, 255, 0.8); // Fondo semi-transparente
+    background: rgba(255, 255, 255, 0.8);
     border: none;
-    border-radius: 50%; // Botón redondo
-    width: 35px; // Ancho fijo
-    height: 35px; // Alto fijo
-    display: flex; // Centra el contenido (icono)
+    border-radius: 50%;
+    width: 25px; 
+    height: 25px;
+    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 1.2em; // Tamaño del icono
+    font-size: 0.8em;
     padding: 0;
     transition: background-color 0.2s ease, color 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Sombra sutil
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .media-actions button:hover {
-    background-color: rgba(255, 255, 255, 1); // Menos transparente al hover
+    background-color: rgb(206, 202, 202);
 }
 
-// Estilo específico para el botón de favorito
-.media-actions button.is-favorite-button {
-    color: #ffc107; // Amarillo
-}
-
-// Estilo específico para el botón de remover
+// Estilo para el botón de remover en vista de favoritos
 .media-actions button.remove-button {
-    color: #dc3545; // Rojo
+    color: #dc3545;
 }

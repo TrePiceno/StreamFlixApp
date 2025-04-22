@@ -24,7 +24,7 @@
             <p class="detail-director">Director: {{ item.director }}</p>
             <p class="detail-sipnosis">{{ item.sipnosis }}</p>
             <!-- Marca o desmarca el item como favorito -->
-            <button (click)="toggleFavorite()" [ngClass]="{ 'is-favorite-button': isFavorite$ | async }"> {{ (isFavorite$ | async) ? '❤️ Marcar como No Favorito' : '🤍 Marcar como Favorito' }} </button>
+            <button (click)="toggleFavorite()" [ngClass]="{ 'is-favorite-button': isFavorite$ | async }"> {{ (isFavorite$ | async) ? '❤️ Quitar de favoritos' : '🤍 Marcar como Favorito' }} </button>
         </div>
     </div>
 

@@ -1,14 +1,13 @@
 .navbar {
-    background-color: #007bff; // Color de fondo azul
-    padding: 2rem 0; // Padding arriba y abajo
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Sombra sutil
-
+    padding: 2rem 3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #5fb9ee;
 }
 
 .container {
-    display: flex; // Usa flexbox para alinear elementos horizontalmente
-    justify-content: space-between; // Distribuye el espacio entre los grupos (marca, enlaces, logout)
-    align-items: center; // Centra elementos verticalmente
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-brand {
@@ -17,35 +16,36 @@
     font-size: 1.2em;
     font-weight: bold;
     color: white;
+    gap: 1rem;
 }
 
 .app-logo-small {
-    height: 5rem; // Tamaño más pequeño para el logo en el navbar
-    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .navbar-links {
-    display: flex; // Usa flexbox para los enlaces
-    list-style: none; // Remueve viñetas de lista
-    margin: 0; // Remueve margen por defecto
-    padding: 0; // Remueve padding por defecto
-    gap: 20px; // Espacio entre enlaces
-    flex-grow: 1; // Permite que los enlaces ocupen el espacio extra (para empujar el botón logout)
-    justify-content: center; // Centra los enlaces si hay espacio
+    display: flex; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: center;
 
     li a {
         color: white;
         text-decoration: none;
         transition: color 0.3s ease;
-        font-size: 1.4em; // Tamaño de fuente ligeramente más grande
-        font-weight: 500; // Peso de fuente normal
+        font-size: 1.4em;
+        font-weight: 500;
 
         &:hover {
-            color: #cccccc; // Color más claro al hover
+            color: #cccccc; 
         }
 
         &.active {
-            // Estilo para el enlace activo (si la ruta coincide)
             font-weight: bold;
             text-decoration: underline;
             color: #ffc107;
@@ -54,17 +54,17 @@
 }
 
 .logout-button {
-    background-color: #dc3545; // Color rojo para logout
+    background-color: #dc3545;
     color: white;
     padding: 8px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 1.1em; // Tamaño de fuente ligeramente más grande
+    font-size: 1.1em; 
     font-weight: 500;
 
     &:hover {
-        background-color: #c82333; // Rojo más oscuro al hover
+        background-color: #c82333;
     }
 }
