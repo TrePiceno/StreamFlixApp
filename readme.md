@@ -66,3 +66,40 @@ ___
 | ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
 |------------------|:---------------------------:|--------------------:|
 | Al ser una aplicación sencilla, no fue tan dificil estructurarla, a pesar de no haber planificado el proyecto.Trabajar la lógica según los requerimientos no fue tan complejo, diría que fue una buena practica para comenzar con este proyecto e ir teniendo más idea de como solventarlo. | Trabajar más en la seguridad de las aplicaciones a desarrollar. Además, una mejor pleneación de la aplicación podría resultar en menos iteraciones durante el desarrollo, si bien si puede haber refactorización de código, al menos podría ser más eficiente el proceso de desarrollo. | De momento el diseño de las cards no me convencen del todo, la posición del texto no es uniforme en las cards, a pesar de que intente usar las propiedades necesarias para solucionarlo, no resulto lo esperado, tendré que seguir intentarlo hasta lograrlo. |
+
+___
+
+# Sprint #2
+
+### Instrucciones de uso
+
+1. Abrir una Visual Studio Code
+2. Abrir terminal
+2. Ejecutar comando con la url: *git clone https://github.com/TrePiceno/StreamFlixApp.git*
+4. Cambiar al directorio del proyecto: cd streamflixapp
+5. Ejecutar el comando *npm install* para que se instalen todas las dependencias del proyecto.
+6. Levantar el servidor con el comando *ng s -o*
+7. Ingresar las credenciales *admin* y *pass123* en sus respectivos campos.
+
+Listo, ya pueden navegar por la aplicación.
+
+#### Para el desarrollo de este proyecto se usaron las siguientes tecnologías y dependencias:
+
+- Angular 18.2.14
+- Typescript 5.5.2
+- Angular Material 18.2.14
+- Node JS 22.14
+
+### Proceso de desarrollo
+
+Como primer punto a abordar, considere tomar el consejo de agregar solo 4 películas por línea para 'facilitar' al usuario el tomar una decisión y claro, evitar tanta saturación de titulos. En ese sentido hice cambios en la UI además de eso, cambie la barra de navegación, incluyendo un botón de 'logout' y agregando solo la navegación entre vistas principales. 
+
+Como segundo punto, implemente un sistema de filtrado, debido que en el desarrollo anterior lo quise implementar pero en esa primer instancia no creí necesario debido que se abordo por medio de botones en el navbar. Esto fue implementados en uno de los proyectos del primer curso en Udemy, el curso de Javascript, entonces lo traje a este proyecto con Angular. 
+
+Como tercer y úlitmo punto, había tenido un acercamiento a Angular el año pasado, sin embargo, en mi carrera todo lo desarrollado fue con React JS, inclusive me tocó desarrollar en Next JS y aunque Angular tiene similitudes, al menos por ahora, me parecen mundos aparte. Me gustan las tres tecnologías. De todos modos no dejo de ser un reto retomar Angular. 
+
+___
+### Sprint Review
+| ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
+|------------------|:---------------------------:|--------------------:|
+| Implementar de manera exitosa las funcionalidades y añadir algunas funcionalidades más, como los filtros, el modal y el logout. | Planificar el desarrollo desde el inicio. | No logré mantener el estado del login, tuve que usar LocalStorage para guardar el estado y poder mantener el sitio con autenticación. Tampoco logré el comportamiento de los enlaces, para destacar en que vista actual de la página. |
