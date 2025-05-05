@@ -1,6 +1,6 @@
 <h2>Catálogo de Películas y Series</h2>
 
-<div *ngIf="isLoading$ | async">
+<div *ngIf="isLoading$ | async" class="test-loading-indicator">
     <p>Cargando catálogo...</p>
 </div>
 
@@ -12,7 +12,7 @@
     <app-media-filter (filterCriteria)="onFilterCriteriaChange($event)"></app-media-filter>
 </div>
 
-<hr>
+<hr >
 
 <div *ngIf="!(errorMessage$ | async) && (filteredMedia$ | async) as filteredMedia" class="media-list-container">
 

@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Media } from '../../shared/models/media.model';
 import { FavoriteService } from '../../services/favorite.service';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-media-item',

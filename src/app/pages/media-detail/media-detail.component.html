@@ -1,17 +1,17 @@
 <button [routerLink]="['/media']" class="back-button">Volver al Catálogo</button>
 <h2>Detalles</h2>
 
-<div *ngIf="isLoading">
+<div *ngIf="isLoading" class="test-loading-indicator">
     <p>Cargando detalles...</p>
 </div>
 
-<div *ngIf="errorMessage" class="error-message">
+<div *ngIf="errorMessage" class="error-message test-error-message">
     <p>{{ errorMessage }}</p>
 </div>
 
 <div *ngIf="!errorMessage && (mediaItem$ | async) as item" class="detail-container">
 
-    <div *ngIf="!item">
+    <div *ngIf="!item" class="test-not-found-message">
         <p>Película/Serie no encontrada.</p>
     </div>
 

@@ -10,6 +10,7 @@ export class FavoriteService {
   private readonly localStorageKey = 'favoriteMediaIds';
 
   // Propiedad que almacena la lista de ids favoritos
+  // BehaviorSubject se encarga de emitir el valor actual y los nuevos valores
   private favoriteIdsSubject = new BehaviorSubject<string[]>(
     this.loadFavoriteIds()
   );
@@ -27,6 +28,7 @@ export class FavoriteService {
 
   // Método para guardar ids de los favoritos en el localStorage
   private saveFavoriteIds(): void {
+      console.log('[FavoriteService] saveFavoriteIds called');
     const ids = this.favoriteIdsSubject.getValue();
     localStorage.setItem(this.localStorageKey, JSON.stringify(ids));
   }

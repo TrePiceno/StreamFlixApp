@@ -1,20 +1,21 @@
 <h2>Mis Favoritos</h2>
 
-<div *ngIf="isLoading$ | async">
+<!-- Se añade una clase para poder usarla en los tests -->
+<div *ngIf="isLoading$ | async" class="test-loading-indicator">
     <p>Cargando favoritos...</p>
 </div>
 
-<div *ngIf="errorMessage$ | async as error" class="error-message">
+<div *ngIf="errorMessage$ | async as error" class="error-message test-error-message">
     <p>{{ error }}</p>
 </div>
 
 <div *ngIf="!(errorMessage$ | async) && (favoriteMedia$ | async) as favoriteMedia" class="favorite-list-container">
 
-    <div *ngIf="favoriteMedia.length === 0" class="empty-list-message">
+    <div *ngIf="favoriteMedia.length === 0" class="empty-list-message test-empty-list-message">
         <p>Aún no tienes películas o series favoritas.</p>
     </div>
 
-    <div *ngIf="favoriteMedia.length > 0" class="media-grid">
+    <div *ngIf="favoriteMedia.length > 0" class="media-grid test-media-grid">
         <div *ngFor="let item of favoriteMedia">
             <app-media-item [item]="item" [showRemoveButton]="true" (removedFromFavorites)="onRemoveFavorite($event)">
             </app-media-item>
