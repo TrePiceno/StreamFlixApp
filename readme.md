@@ -69,7 +69,7 @@ ___
 
 ___
 
-# Sprint #2
+# Sprint #2 - Migración a Angular
 
 ### Instrucciones de uso
 
@@ -103,3 +103,33 @@ ___
 | ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
 |------------------|:---------------------------:|--------------------:|
 | Implementar de manera exitosa las funcionalidades y añadir algunas funcionalidades más, como los filtros, el modal y el logout. | Planificar el desarrollo desde el inicio. | No logré mantener el estado del login, tuve que usar LocalStorage para guardar el estado y poder mantener el sitio con autenticación. Tampoco logré el comportamiento de los enlaces, para destacar en que vista actual de la página. |
+
+___
+
+# Sprint #3 - Testing
+
+### Proceso de desarrollo
+
+En principio creí que sería sencillo comparado con el desarrollo de la aplicación. Me resulto todo un viacrucis: primero entender de que trata el testing en este framework (y en general); luego entender que escenarios se deben considerar, como casos de uso para testear; con que conceptos se trabaja si lo que se testean son observables, si se debe hacer con asincronia, si hay que simular carga de datos, el uso de mocks, stubbing, renderizado de elementos del DOM; algunas cosas me parecieron familiar, como la captura de elementos del DOM. Sinceramente, es muy denso y entiendo que solo son cosas básicas, ahora logré hacerlo, con muchas y muchas horas de probar e investigar, al final he de tener que prácticar mucho más para realmente interiorizar cada concepto, cada línea de código. Me siento saturado y solo es el principio.
+
+### Reportes de testing
+
+#### Code Coverage
+
+![Code_Coverage](./public/images/Code_Coverage.png "Code_Coverage")
+
+#### Testing
+
+ 
+![Code_Coverage](./public/images/Testing_1.png "Code_Coverage")
+--> imagen 1/2
+
+![Code_Coverage](./public/images/Testing_2.png "Code_Coverage")
+--> imagen 2/2
+
+___
+
+### Sprint Review
+| ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
+|------------------|:---------------------------:|--------------------:|
+| La cantidad de pruebas, sinceramente creí poder hacer muchas menos, la ventaja que algunas simplemente eran opuestas de otras y en algunos casos muy similares a otras. | Planificar el desarrollo desde el inicio. | Quizas faltan muchas pruebas de distintos escenarios, pero apenas logré hacer las que hice, con más tiempo y mayor entendimiento se podrían cubrir más escenarios. Me siento incapaz, me falta un montón por aprender. |
