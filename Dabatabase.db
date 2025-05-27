@@ -1,0 +1,432 @@
+CREATE DATABASE MoviesAppDB;
+GO
+USE MoviesAppDB;
+GO
+
+-- 1. Tabla Usuarios
+CREATE TABLE Usuarios (
+    UsuarioId INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50) NOT NULL UNIQUE, -- NVARCHAR para soportar caracteres especiales
+    PasswordHash NVARCHAR(256) NOT NULL, -- Tamaño suficiente para un hash como SHA-256
+    FechaCreacion DATETIME2 DEFAULT GETDATE()
+);
+GO
+
+-- 2. Tabla PeliculasSeries
+CREATE TABLE PeliculasSeries (
+    ItemId INT PRIMARY KEY IDENTITY(1,1),
+    Titulo NVARCHAR(255) NOT NULL,
+    Imagen NVARCHAR(MAX), -- Usamos MAX si las URLs pueden ser muy largas
+    ImagenDetalle NVARCHAR(MAX),
+    Sinopsis NVARCHAR(MAX),
+    Anio INT,
+    Director NVARCHAR(100),
+    Genero NVARCHAR(50), -- Basado en tu JSON, un solo género como cadena
+    Categoria NVARCHAR(20) NOT NULL -- 'pelicula' o 'serie'
+);
+GO
+
+-- 3. Tabla UsuariosFavoritos (Tabla de unión)
+CREATE TABLE UsuariosFavoritos (
+    UsuarioFavoritoId INT PRIMARY KEY IDENTITY(1,1),
+    UsuarioId INT NOT NULL,
+    ItemId INT NOT NULL,
+    FechaAgregado DATETIME2 DEFAULT GETDATE(),
+    -- Restricciones de clave foránea
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(UsuarioId),
+    FOREIGN KEY (ItemId) REFERENCES PeliculasSeries(ItemId),
+    -- Restricción para evitar duplicados: un usuario solo puede tener un ítem una vez en favoritos
+    CONSTRAINT UQ_Usuario_Item UNIQUE (UsuarioId, ItemId)
+);
+GO
+
+-- Índice para mejorar el rendimiento en búsquedas por usuario en favoritos
+CREATE INDEX IX_UsuariosFavoritos_UsuarioId ON UsuariosFavoritos (UsuarioId);
+GO
+
+-- Índice para mejorar el rendimiento en búsquedas por item en favoritos
+CREATE INDEX IX_UsuariosFavoritos_ItemId ON UsuariosFavoritos (ItemId);
+GO
+
+USE MoviesAppDB; -- Asegúrate de estar en la base de datos correcta
+GO
+
+-- Reemplaza 'tu_usuario' y 'hash_de_tu_contraseña' con tus valores
+INSERT INTO Usuarios (Username, PasswordHash, FechaCreacion)
+VALUES ('admin', '$2a$11$Sr01JpyV3H/5m/HEejxPlOOzKSivRMHT22gUgeE5h4R5dLNcXi/qG', GETDATE());
+GO
+
+SELECT * FROM Usuarios
+
+INSERT INTO PeliculasSeries (Titulo, Imagen, ImagenDetalle, Sinopsis, Anio, Director, Genero, Categoria)
+VALUES (
+    'Oppenheimer',
+    'https://image.tmdb.org/t/p/w500/5t05uhX5ULn8Um2f1ZuznVvIffU.jpg',
+    'https://image.tmdb.org/t/p/w500/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg',
+    'La historia del científico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica.',
+    2023,
+    'Christopher Nolan',
+    'Drama',
+    'pelicula'
+),
+(
+    'Barbie',
+    'https://image.tmdb.org/t/p/original/3aij5sA5AhK2flrjsfrVQs93CUx.jpg',
+    'https://image.tmdb.org/t/p/original/keZwCyT8zbeh5hV9Po6AXRSF8X0.jpg',
+    'Barbie vive en Barbieland y comienza a cuestionar su mundo y su existencia.',
+    2023,
+    'Greta Gerwig',
+    'Comedia',
+    'pelicula'
+),
+(
+    'Killers of the Flower Moon',
+    'https://image.tmdb.org/t/p/original/64CvprgI5DFGtr6tOgsOwkoC36t.jpg',
+    'https://image.tmdb.org/t/p/original/fnxQUdLAjmSRCdudbYClkSnrxVf.jpg',
+    'La historia real de los asesinatos de miembros de la nación Osage en Oklahoma.',
+    2023,
+    'Martin Scorsese',
+    'Drama',
+    'pelicula'
+),
+(
+    'Napoleón',
+    'https://image.tmdb.org/t/p/original/rEpTqGu8JVUULPMsGrhMBDOgznu.jpg',
+    'https://image.tmdb.org/t/p/original/8Lcn8WMzLNC14rwURgtAOV11JGd.jpg',
+    'La vida y carrera militar de Napoleón Bonaparte.',
+    2023,
+    'Ridley Scott',
+    'Drama',
+    'pelicula'
+),
+(
+    'The Marvels',
+    'https://image.tmdb.org/t/p/original/rp3cjGabBAVpZtKyY4jiwikzj3H.jpg',
+    'https://image.tmdb.org/t/p/original/wsGey4fJQKcXmhWidGNFunhunrA.jpg',
+    'Carol Danvers, Kamala Khan y Monica Rambeau unen fuerzas para salvar el universo.',
+    2023,
+    'Nia DaCosta',
+    'Acción',
+    'pelicula'
+),
+(
+    'Dune: Parte 2',
+    'https://image.tmdb.org/t/p/original/mTibWSlwmYxd5NiD3WHPozWhhiX.jpg',
+    'https://image.tmdb.org/t/p/original/94sYD4wigZFBo8ovcLyMJm3k4VB.jpg',
+    'Paul Atreides se une a los Fremen en una guerra de venganza contra los conspiradores.',
+    2024,
+    'Denis Villeneuve',
+    'Ciencia ficción',
+    'pelicula'
+),
+(
+    'Poor Things',
+    'https://image.tmdb.org/t/p/original/jG4o67eZKlvuL5R6WTysRkPwE75.jpg',
+    'https://image.tmdb.org/t/p/original/aV7D9IMQZVkD10eqbkpHWreVjmv.jpg',
+    'Una joven mujer revive y emprende un viaje de autodescubrimiento.',
+    2023,
+    'Yorgos Lanthimos',
+    'Drama',
+    'pelicula'
+),
+(
+    'The Zone of Interest',
+    'https://image.tmdb.org/t/p/original/aIFQc0iFTFBiVEQy9dHfcnmVZKb.jpg',
+    'https://image.tmdb.org/t/p/original/nPKs90SIbbXLpHHWLOwwN61lvGO.jpg',
+    'La historia de un comandante nazi y su familia que viven junto a Auschwitz.',
+    2023,
+    'Jonathan Glazer',
+    'Drama',
+    'pelicula'
+),
+(
+    'Anatomy of a Fall',
+    'https://image.tmdb.org/t/p/original/1ho0d4LNZw3Y0voeKmSvPSgJOJ2.jpg',
+    'https://image.tmdb.org/t/p/original/hDhUpy5XUgx810VWusV4alX9DFF.jpg',
+    'Una escritora es sospechosa del asesinato de su marido.',
+    2023,
+    'Justine Triet',
+    'Thriller',
+    'pelicula'
+),
+(
+    'The Holdovers',
+    'https://image.tmdb.org/t/p/original/VHSzNBTwxV8vh7wylo7O9CLdac.jpg',
+    'https://image.tmdb.org/t/p/original/gcqscT68BOeeDQaj2H5mrBeADR7.jpg',
+    'Un profesor de escuela preparatoria debe cuidar a un estudiante durante las vacaciones.',
+    2023,
+    'Alexander Payne',
+    'Comedia',
+    'pelicula'
+),
+(
+    'John Wick 4',
+    'https://image.tmdb.org/t/p/original/jPJfq3s7UybktndveSbhwsReYqH.jpg',
+    'https://image.tmdb.org/t/p/original/8tX3lxhbACxiX4fn5TkC9AhhW65.jpg',
+    'John Wick lucha contra la Alta Mesa para ganar su libertad.',
+    2023,
+    'Chad Stahelski',
+    'Acción',
+    'pelicula'
+),
+(
+    'Mission: Impossible - Dead Reckoning',
+    'https://image.tmdb.org/t/p/original/ziqqb5plpSrcHywK53FD06O81LT.jpg',
+    'https://image.tmdb.org/t/p/original/mRdNsdTJsn5FGjnMs8FyyiQKCaV.jpg',
+    'Ethan Hunt y su equipo deben detener una IA peligrosa.',
+    2023,
+    'Christopher McQuarrie',
+    'Acción',
+    'pelicula'
+),
+(
+    'No Hard Feelings',
+    'https://image.tmdb.org/t/p/original/8Ox0C2kaH7yJlaBLKgq2PbDGLpJ.jpg',
+    'https://image.tmdb.org/t/p/original/gDRbkMQus09pK0resW7bNsM38Ax.jpg',
+    'Una mujer desempleada acepta salir con el hijo introvertido de una pareja rica.',
+    2023,
+    'Gene Stupnitsky',
+    'Comedia',
+    'pelicula'
+),
+(
+    'Bottoms',
+    'https://image.tmdb.org/t/p/original/jeyTQrNEpyE1LZIgVlswYh3sc34.jpg',
+    'https://image.tmdb.org/t/p/original/2sxiysM6O0FAxeR2CEIeKSv9IkA.jpg',
+    'Dos chicas crean un club de lucha para acercarse a sus crush.',
+    2023,
+    'Emma Seligman',
+    'Comedia',
+    'pelicula'
+),
+(
+    'Leave the World Behind',
+    'https://image.tmdb.org/t/p/original/jBUyaueouZCf25dbpGcutRJLiE6.jpg',
+    'https://image.tmdb.org/t/p/original/z2JjbcAyY9XSWYQVCNKLshc6bt9.jpg',
+    'Una familia se enfrenta a un misterioso apocalipsis.',
+    2023,
+    'Sam Esmail',
+    'Thriller',
+    'pelicula'
+),
+(
+    'Saltburn',
+    'https://image.tmdb.org/t/p/original/nDR7AmsS5WqWyo9dQTggT6JsP6a.jpg',
+    'https://image.tmdb.org/t/p/original/bAtFhmRHp0f6aHqj1UGTZoPcmQo.jpg',
+    'Un estudiante de Oxford se obsesiona con su amigo rico.',
+    2023,
+    'Emerald Fennell',
+    'Thriller',
+    'pelicula'
+),
+(
+    'The Creator',
+    'https://image.tmdb.org/t/p/original/m8uLnH83bKkzpM39sBhHxs4ZmVp.jpg',
+    'https://image.tmdb.org/t/p/original/A0GuykAjb1vlyQSVTyS8nAwaIGM.jpg',
+    'Un ex-agente debe proteger a una IA con forma de niña.',
+    2023,
+    'Gareth Edwards',
+    'Ciencia ficción',
+    'pelicula'
+),
+(
+    'Rebel Moon',
+    'https://image.tmdb.org/t/p/original/veWd6l7RtzODYy53qvArJzdqc7y.jpg',
+    'https://image.tmdb.org/t/p/original/eoJ7eD3yWH1GltI1FvvZfzY6Ok2.jpg',
+    'Una guerrera reúne un ejército para luchar contra un tirano.',
+    2023,
+    'Zack Snyder',
+    'Ciencia ficción',
+    'pelicula'
+),
+(
+    'The Last of Us',
+    'https://image.tmdb.org/t/p/original/9kNOjdEoe8dWlu6y9nuR4rmFQo7.jpg',
+    'https://image.tmdb.org/t/p/original/fAuXblS0qUiQ2SWJzpvFMH1su6i.jpg',
+    'Un hombre y una niña atraviesan un mundo postapocalíptico en busca de supervivencia.',
+    2023,
+    'Craig Mazin',
+    'Drama',
+    'serie'
+),
+(
+    'House of the Dragon',
+    'https://image.tmdb.org/t/p/original/ixOE4qfspKZaaGZUnPCQDANznTz.jpg',
+    'https://image.tmdb.org/t/p/original/tPd2La6ih0h6EKlXmZSNAu12ozn.jpg',
+    'La historia de la Casa Targaryen 200 años antes de Game of Thrones.',
+    2023,
+    'Ryan Condal',
+    'Drama',
+    'serie'
+),
+(
+    'The Bear',
+    'https://image.tmdb.org/t/p/original/1lL0DvSZ0pEglXpkw7WURSpQZ8k.jpg',
+    'https://image.tmdb.org/t/p/original/aZz0AOpYcDyYwfET9k6j3QQXPuS.jpg',
+    'Un chef regresa a Chicago para manejar el restaurante de su familia.',
+    2023,
+    'Christopher Storer',
+    'Drama',
+    'serie'
+),
+(
+    'Succession',
+    'https://image.tmdb.org/t/p/original/z0XiwdrCQ9yVIr4O0pxzaAYRxdW.jpg',
+    'https://image.tmdb.org/t/p/original/pvxlTSiM7VsbxdSYLrnKrN1OIUZ.jpg',
+    'Una familia rica lucha por el control de su imperio mediático.',
+    2023,
+    'Jesse Armstrong',
+    'Drama',
+    'serie'
+),
+(
+    'Wednesday',
+    'https://image.tmdb.org/t/p/original/5Jj5XwBPCQ9SsZ4vUtQ9QnONxBG.jpg',
+    'https://image.tmdb.org/t/p/original/phdmzfw3cN7DucxZB3piGlOjdtJ.jpg',
+    'Wednesday Addams investiga una serie de asesinatos en su nueva escuela.',
+    2023,
+    'Tim Burton',
+    'Comedia',
+    'serie'
+),
+(
+    'The White Lotus',
+    'https://image.tmdb.org/t/p/original/zD00K98yfTxZE1yoK1tM8bAnr2d.jpg',
+    'https://image.tmdb.org/t/p/original/in4sGDwXnRiruOUEx2p1EcsDNSb.jpg',
+    'Una serie de misterios en un lujoso resort.',
+    2023,
+    'Mike White',
+    'Drama',
+    'serie'
+),
+(
+    'Stranger Things',
+    'https://image.tmdb.org/t/p/original/63pSXrvtXhGoHAZ68peN7Le7BoH.jpg',
+    'https://image.tmdb.org/t/p/original/p1Y6hY9G95OYf8Z67Obh4nZ9GHZ.jpg',
+    'Un grupo de niños descubre fenómenos sobrenaturales en su pequeño pueblo.',
+    2023,
+    'Matt Duffer',
+    'Ciencia ficción',
+    'serie'
+),
+(
+    'The Mandalorian',
+    'https://image.tmdb.org/t/p/original/rTChPZw7Jyf4c20OZpN99QCRwkz.jpg',
+    'https://image.tmdb.org/t/p/original/meybgRNBWAX6u7obnWbidMeBzMe.jpg',
+    'Un cazarrecompensas solitario protege a un niño misterioso en la galaxia.',
+    2023,
+    'Jon Favreau',
+    'Ciencia ficción',
+    'serie'
+),
+(
+    'Better Call Saul',
+    'https://image.tmdb.org/t/p/original/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg',
+    'https://image.tmdb.org/t/p/original/sJwZkQZLXYuDBQxuKbyvAFgVfn5.jpg',
+    'La historia de Jimmy McGill antes de convertirse en Saul Goodman.',
+    2023,
+    'Vince Gilligan',
+    'Drama',
+    'serie'
+),
+(
+    'The Crown',
+    'https://image.tmdb.org/t/p/original/tjUEdX1Pzn1VqNlpUduEnnhhRH4.jpg',
+    'https://image.tmdb.org/t/p/original/63u7DCLSWo8TNBZUhu7fEXj6kX1.jpg',
+    'La vida de la reina Isabel II y la familia real británica.',
+    2023,
+    'Peter Morgan',
+    'Drama',
+    'serie'
+),
+(
+    'Reacher',
+    'https://image.tmdb.org/t/p/original/2JdEwRMrycnOY9waAySOOucIl6K.jpg',
+    'https://image.tmdb.org/t/p/original/dSL5u2TTkGR0etZf8crINHD2QMR.jpg',
+    'Un ex-policía militar resuelve crímenes en pequeños pueblos.',
+    2023,
+    'Nick Santora',
+    'Acción',
+    'serie'
+),
+(
+    'The Night Agent',
+    'https://image.tmdb.org/t/p/original/gCGT2bK4xC9yVdtFdzC7jvEXLJF.jpg',
+    'https://image.tmdb.org/t/p/original/hg9NIdKRDfwoSWpN10yhih0dziA.jpg',
+    'Un agente del FBI descubre una conspiración en la Casa Blanca.',
+    2023,
+    'Seth Gordon',
+    'Acción',
+    'serie'
+),
+(
+    'Ted',
+    'https://image.tmdb.org/t/p/original/2ZetTSYM8ATcrxh4Otge99GJRTz.jpg',
+    'https://image.tmdb.org/t/p/original/iUglhlBMUgOE9v1ySTlE8xtwjLw.jpg',
+    'Un osito de peluche malhablado vive con su mejor amigo humano.',
+    2024,
+    'Seth MacFarlane',
+    'Comedia',
+    'serie'
+),
+(
+    'Shrinking',
+    'https://image.tmdb.org/t/p/original/6U4uXtGlgtXroqQvh2wtTBFktPo.jpg',
+    'https://image.tmdb.org/t/p/original/tHup0SxItYiitbbgrGqqch2c8J1.jpg',
+    'Un terapeuta en duelo comienza a dar consejos poco convencionales.',
+    2023,
+    'Bill Lawrence',
+    'Comedia',
+    'serie'
+),
+(
+    'True Detective: Night Country',
+    'https://image.tmdb.org/t/p/original/cuV2O5ZyDLHSOWzg3nLVljp1ubw.jpg',
+    'https://image.tmdb.org/t/p/original/rqJELNwYmSzwWVa9bLKrFEzyCvI.jpg',
+    'Dos detectives investigan la desaparición de ocho hombres en Alaska.',
+    2024,
+    'Issa López',
+    'Thriller',
+    'serie'
+),
+(
+    'Fool Me Once',
+    'https://image.tmdb.org/t/p/original/5z6xycMXbJCVAIDT5Q4tkzg6cz6.jpg',
+    'https://image.tmdb.org/t/p/original/vQKeLPP5E4rxGR4u4WJ8g6Eh3in.jpg',
+    'Una mujer descubre que su marido muerto podría estar vivo.',
+    2024,
+    'David Moore',
+    'Thriller',
+    'serie'
+),
+(
+    'Silo',
+    'https://image.tmdb.org/t/p/original/f75XqK05rvDqvuD7dXC34OeJcr9.jpg',
+    'https://image.tmdb.org/t/p/original/cAYMSOqsKmi9vdzWh6yv7FCVHzQ.jpg',
+    'La humanidad vive en un silo subterráneo gigante.',
+    2023,
+    'Morten Tyldum',
+    'Ciencia ficción',
+    'serie'
+),
+(
+    'Scavengers Reign',
+    'https://image.tmdb.org/t/p/original/soqfb1vpjhx2ThpkdnnS58QiME2.jpg',
+    'https://image.tmdb.org/t/p/original/6EKWQuktkOqQFXOzCaokd5ipp33.jpg',
+    'Sobrevivientes de una nave espacial naufragan en un planeta alienígena.',
+    2023,
+    'Charles Huettner',
+    'Ciencia ficción',
+    'serie'
+);
+
+SELECT * FROM PeliculasSeries
+
+-- Asumiendo que 'tu_usuario' tiene UsuarioId = 1 y 'Oppenheimer' tiene ItemId = 1
+INSERT INTO UsuariosFavoritos (UsuarioId, ItemId, FechaAgregado)
+VALUES (1, 1, GETDATE());
+GO
+
+SELECT * FROM UsuariosFavoritos
+
+SELECT * FROM Usuarios
